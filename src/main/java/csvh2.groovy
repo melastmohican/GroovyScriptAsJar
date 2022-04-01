@@ -8,6 +8,6 @@ def db = Sql.newInstance("jdbc:h2:mem:db1", "org.h2.Driver")
 db.execute("create table gene_names as select * from csvread('CaliforniaPOI.csv',null, 'charset=UTF-8 fieldSeparator=' || CHAR(9))")
 
 // Execute a normal sql query on this table...
-db.eachRow("select * from gene_names") { row -> 
+db.eachRow("select * from Track") { row -> 
     println row
 }
